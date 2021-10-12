@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Currency from "./components/Currency";
 import { BASE_URL } from "./utils/constants";
 
 function App() {
-  const [currency, setCurrencies] = useState([]);
+  const [currencies, setCurrencies] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
@@ -15,6 +17,14 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredCurrencies = currencies.filter((currency) => {
+    currency.name.toLowerCase().includes(search.toLowerCase());
+  });
+
   return (
     <div className="cryptoApp">
       <div className="cryptoApp__search">
@@ -24,9 +34,22 @@ function App() {
             type="text"
             placeholder="Search"
             className="cryptoApp__input"
+            onChange={handleChange}
           />
         </form>
       </div>
+      {filteredCurrencies.map((currency) => {
+        return (
+          <Currency
+            key={currency.id}
+            name={currency.name}
+            price={currency.current_price}
+            symbol={currency.symbol}
+            image={currency.image}
+            volume={currency.market_cap}
+          />
+        );
+      })}
     </div>
   );
 }

@@ -9,7 +9,7 @@ const Currency = ({ name, image, symbol, price, volume }) => {
         </div>
         <div className="currency__data">
           <p className="currency__price">{price} NOK</p>
-          <p className="currency__volume">{volume.toLocalString()} NOK</p>
+          <p className="currency__volume">{volume.toLocaleString()} NOK</p>
         </div>
       </div>
     </div>
