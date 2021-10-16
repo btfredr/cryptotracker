@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #1a1a1c;
+  color: #fff;
+}
+
+.cryptoApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px;
+  color: #fff;
+  margin-bottom: 64px;
+
+  &__search {
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &__input {
+    padding-left: 16px;
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(241, 237, 237);
+    color: black;
+    outline-width: 0;
+  }
+
+  &__input::placeholder {
+    color: black;
+  }
+}

@@ -11,11 +11,11 @@ const Currency = ({
 }) => {
   return (
     <div className="currency">
-      <div className="currency-row">
+      <div className="currency__row">
         <div className="currency__item">
           <img src={image} alt="crypto" />
           <h1>{name}</h1>
-          <p className="currency-symbol">{symbol}</p>
+          <p className="currency__symbol">{symbol}</p>
         </div>
         <div className="currency__data">
           <p className="currency__price">{price} NOK</p>
@@ -28,7 +28,7 @@ const Currency = ({
           )}
 
           <p className="currency__marketcap">
-            Mkt Cap: ${marketcap.toLocaleString()}
+            Markedsverdi: {marketcap.toLocaleString()} NOK
           </p>
         </div>
       </div>

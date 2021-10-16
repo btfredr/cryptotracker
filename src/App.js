@@ -28,13 +28,13 @@ function App() {
   return (
     <div className="cryptoApp">
       <div className="cryptoApp__search">
-        <h1 className="cryptoApp__text">Search a currency</h1>
+        <h1 className="cryptoApp__text">Søk etter en valuta</h1>
         <form>
           <input
             className="cryptoApp__input"
             type="text"
             onChange={handleChange}
-            placeholder="Search"
+            placeholder="Søk"
           />
         </form>
       </div>
